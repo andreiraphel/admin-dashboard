@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(10, 10%);
+    border: 4px solid black;
+    height: 100vh;
+}
+
+/* ----------------------------------------------------------------- */
+
+.navbar{
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    border: 2px solid red;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.navbar > .title {
+    font-size: 2rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: white;
+}
+
+/* ----------------------------------------------------------------- */
+
+.header{
+    grid-column: 2/-1;
+    grid-row: 1/3;
+    border: 2px solid green;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* ----------------------------------------------------------------- */
+
+.body {
+    grid-column: 2/-1;
+    grid-row: 3/-1;
+    border: 2px solid orange;
+
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+}
+
+.projects {
+    grid-column: 1/8;
+    grid-row: 1/-1;
+    border: 2px solid orange;
+}
+
+.announcements {
+    grid-column: 8/-1;
+    grid-row: 1/6;
+    border: 2px solid pink;
+}
+
+.trending {
+    grid-column: 8/-1;
+    grid-row: 6/-1;
+    border: 2px solid rebeccapurple;
+}
