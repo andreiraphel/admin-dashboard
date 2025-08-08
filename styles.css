@@ -10,8 +10,9 @@
     display: grid;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(20, 5%);
-    border: 4px solid black;
     height: 100vh;
+    overflow: hidden;
+    background-color: rgb(239, 250, 255);
 }
 
 /* ----------------------------------------------------------------- */
@@ -77,10 +78,11 @@
 .header{
     grid-column: 3/-1;
     grid-row: 1/4;
-    border: 2px solid green;
 
     display: flex;
     flex-direction: column;
+    box-shadow: 10px 0 8px 8px rgba(0,0,0,0.3);
+    background-color: white;
 }
 
 .upper-header, .lower-header, .search-bar, .header-profile, .name, .header-options {
@@ -89,18 +91,23 @@
 
 .upper-header, .lower-header {
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 0.2rem 2rem;
 }
 
 .search-bar, .header-profile, .name, .header-options {
-    gap: 2rem;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
 }
 
+.search-bar .mdi {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .search-bar > input {
     height: 2rem;
-    width: min(25rem, 50%);
+    width: 300px;
     background-color: rgb(213, 227, 233);
     border: 1px solid white;
     border-radius: 80px;
@@ -108,11 +115,49 @@
 
 .header-profile img {
     height: auto;
-    width: 5rem;
+    width: 3rem;
+}
+
+.header-profile .mdi, .header-profile .profile-name {
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .header-profile {
     display: flex;
+}
+
+.name img {
+    height: auto;
+    width: 4rem;
+}
+
+.name div {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.name div > .hi {
+    font-size: 01rem;
+}
+
+.header-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(71, 166, 255);
+    height: 2rem;
+    width: 5rem;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
 }
 
 /* ----------------------------------------------------------------- */
@@ -120,27 +165,66 @@
 .body {
     grid-column: 3/-1;
     grid-row: 4/-1;
-    border: 2px solid orange;
 
     display: grid;
-    grid-template-columns: repeat(10, 10%);
-    grid-template-rows: repeat(10, 10%);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 5px;
 }
 
 .projects {
-    grid-column: 1/8;
-    grid-row: 1/-1;
-    border: 2px solid orange;
+    grid-column: 1 / 8;
+    grid-row: 1 / -1;
+    padding: 2rem 1rem;
 }
 
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.body-subtitle {
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+
+.project {
+    min-width: 0;
+    background-color: white;
+    border-left: 8px solid orange;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 0.1px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.content-title {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.project > .content-options {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    gap: 1rem
+}
+
+
 .announcements {
-    grid-column: 8/-1;
-    grid-row: 1/6;
-    border: 2px solid pink;
+    grid-column: 8 / 11;
+    grid-row: 1 / 6;
+    padding: 2rem 0;
+    border: 4px solid green;
 }
 
 .trending {
-    grid-column: 8/-1;
-    grid-row: 6/-1;
-    border: 2px solid rebeccapurple;
+    grid-column: 8 / 11;
+    grid-row: 6 / 11;
 }
